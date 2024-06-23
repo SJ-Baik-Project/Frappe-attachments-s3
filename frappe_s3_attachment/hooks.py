@@ -28,7 +28,8 @@ app_license = "MIT"
 # include js in doctype views
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 doctype_list_js = {
-    "S3 Attachment Settings": ["frappe_s3_attachment/doctype/s3_attachment_settings/s3_attachment_settings.js"]
+    "S3 Attachment Settings": [
+        "frappe_s3_attachment/doctype/s3_attachment_settings/s3_attachment_settings.js"]
 }
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -92,7 +93,7 @@ doctype_list_js = {
 doc_events = {
     "File": {
         "after_insert": "frappe_s3_attachment.controller.file_upload_to_s3",
-        "on_trash": "frappe_s3_attachment.controller.delete_from_cloud"
+        # "on_trash": "frappe_s3_attachment.controller.delete_from_cloud"
     }
 }
 
@@ -128,4 +129,3 @@ doc_events = {
 # override_whitelisted_methods = {
 # 	"frappe.desk.doctype.event.event.get_events": "frappe_s3_attachment.event.get_events"
 # }
-
