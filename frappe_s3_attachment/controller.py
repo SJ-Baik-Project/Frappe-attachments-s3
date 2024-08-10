@@ -252,6 +252,11 @@ def file_upload_to_s3(doc, method):
 def is_ignore_s3_upload(doc):
     path = doc.file_url
     site_path = frappe.utils.get_site_path()
+
+    # If path is None then ignore the s3 upload
+    if not path:
+        return True
+
     if not doc.is_private:
         file_path = site_path + '/public' + path
     else:
